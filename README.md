@@ -10,7 +10,7 @@ Christian Endres (MPE)
 # Instructions
 
 - Clone    
-`clone git@github.com:tgrassi/gui_vl.git`     
+`git clone https://github.com/tgrassi/gui_vl.git`     
 `cd gui_vl`
   
 - Create environment     
