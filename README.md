@@ -23,8 +23,7 @@ Christian Endres (MPE)
 - Launch and pray    
 `python pyLabSpec-0.3.2/pyLabSpec/GUIs/qtfit.py`     
 
-(- In case you get "ModuleNotFoundError: module named 'distutils'" error:     
-`pip install setuptools`)
+(In case you get "ModuleNotFoundError: module named 'distutils'" error: `pip install setuptools`)     
 
 # Very likely you will a get a series of warnings and errors, nevertheless the GUI should open at this point.
   
