@@ -1,0 +1,14 @@
+adjustText
+matplotlib
+numpy
+pyads
+PyOpenGL
+PyQt5
+PyQt5_sip
+pyqtgraph==0.12.0
+pyrpl
+pyserial
+PyYAML
+Requests
+scipy
+zhinst

@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QDialog</class>
+ <widget class="QDialog" name="QDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>863</width>
+    <height>670</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtProFitter</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="DetachableTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab_parameters">
+        <attribute name="title">
+         <string>parameters</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="check_calcPairAvgCen">
+               <property name="text">
+                <string>Calculate average center frequency from pairs</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="check_showFitFreqLabels">
+               <property name="text">
+                <string>Show frequency label(s) after fit</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="check_useMultParams">
+               <property name="text">
+                <string>Allow multiple broadening params</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="check_showGuess">
+               <property name="text">
+                <string>show initial guess</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="layout_options1">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_fitMethod">
+               <property name="text">
+                <string>method</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_fitFscale">
+               <property name="text">
+                <string>f_scale</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="ScrollableText" name="txt_fitFscale">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="combo_fitMethod"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="layout_options2">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+             </property>
+             <property name="formAlignment">
+              <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_fitFunction">
+               <property name="text">
+                <string>fit function</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="combo_fitFunction"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_harmonic">
+               <property name="text">
+                <string>harmonic</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="txt_harmonic">
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="layout_params">
+           <item row="0" column="4">
+            <widget class="QLabel" name="label_min">
+             <property name="text">
+              <string>min</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_parameter">
+             <property name="text">
+              <string>parameter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_guess">
+             <property name="text">
+              <string>initial guess</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_use">
+             <property name="text">
+              <string>Use?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="label_max">
+             <property name="text">
+              <string>max</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_Lock">
+             <property name="text">
+              <string>Fix?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="check_oversampleUse">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_oversample">
+             <property name="text">
+              <string>oversample</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="ScrollableText" name="txt_oversample">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QCheckBox" name="check_velSDUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="ScrollableText" name="txt_pressure">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="check_windowSizeUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="ScrollableText" name="txt_windowSize">
+             <property name="text">
+              <string>50</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="label_windowSize">
+             <property name="text">
+              <string>window size [MHz]</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QLineEdit" name="txt_freqCenterMin">
+             <property name="text">
+              <string>-0.5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="label_freqCenter">
+             <property name="text">
+              <string>freq. center (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="check_freqCenterUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="ScrollableText" name="txt_freqCenter">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QLineEdit" name="txt_freqCenterMax">
+             <property name="text">
+              <string>+0.5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="label_tauRad">
+             <property name="text">
+              <string>A_ul [s]</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="check_tauRadUse">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="5">
+            <widget class="QLineEdit" name="txt_tauRadMax"/>
+           </item>
+           <item row="4" column="4">
+            <widget class="QLineEdit" name="txt_tauRadMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="ScrollableText" name="txt_tauRad">
+             <property name="text">
+              <string>1e8</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QCheckBox" name="check_tauRadLock">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLabel" name="label_temperature">
+             <property name="text">
+              <string>temperature (K)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="ScrollableText" name="txt_temperature">
+             <property name="text">
+              <string>300</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="check_temperatureUse">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLabel" name="label_pressure">
+             <property name="text">
+              <string>pressure (mTorr)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QCheckBox" name="check_pressureUse">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QCheckBox" name="check_fwhmUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="label_fwhm">
+             <property name="text">
+              <string>FWHM (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="5">
+            <widget class="QLineEdit" name="txt_fwhmMax"/>
+           </item>
+           <item row="8" column="4">
+            <widget class="QLineEdit" name="txt_fwhmMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="3">
+            <widget class="QCheckBox" name="check_fwhmLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="ScrollableText" name="txt_fwhm">
+             <property name="text">
+              <string>1.0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="4">
+            <widget class="QLineEdit" name="txt_velCollMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="5">
+            <widget class="QLineEdit" name="txt_velCollMax"/>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLabel" name="label_velColl">
+             <property name="text">
+              <string>Δv_coll (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QCheckBox" name="check_velCollUse">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="ScrollableText" name="txt_velColl">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="3">
+            <widget class="QCheckBox" name="check_velCollLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="4">
+            <widget class="QLineEdit" name="txt_velDoppMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="5">
+            <widget class="QLineEdit" name="txt_velDoppMax"/>
+           </item>
+           <item row="10" column="2">
+            <widget class="ScrollableText" name="txt_velDopp">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="3">
+            <widget class="QCheckBox" name="check_velDoppLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QCheckBox" name="check_velDoppUse">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLabel" name="label_velDopp">
+             <property name="text">
+              <string>Δv_dopp (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QCheckBox" name="check_coeffNarUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="4">
+            <widget class="QLineEdit" name="txt_coeffNarMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLabel" name="label_coeffNar">
+             <property name="text">
+              <string>narrowing coeff</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="5">
+            <widget class="QLineEdit" name="txt_coeffNarMax">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="2">
+            <widget class="ScrollableText" name="txt_coeffNar">
+             <property name="text">
+              <string>0.1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="3">
+            <widget class="QCheckBox" name="check_coeffNarLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLabel" name="label_velSD">
+             <property name="text">
+              <string>Δv_SD (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="5">
+            <widget class="QLineEdit" name="txt_velSDMax">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="3">
+            <widget class="QCheckBox" name="check_velSDLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="4">
+            <widget class="QLineEdit" name="txt_velSDMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="2">
+            <widget class="ScrollableText" name="txt_velSD">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLabel" name="label_modDepth">
+             <property name="text">
+              <string>FM depth (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="4">
+            <widget class="QLineEdit" name="txt_modDepthMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="5">
+            <widget class="QLineEdit" name="txt_modDepthMax"/>
+           </item>
+           <item row="13" column="3">
+            <widget class="QCheckBox" name="check_modDepthLock">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="2">
+            <widget class="ScrollableText" name="txt_modDepth">
+             <property name="text">
+              <string>0.5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QCheckBox" name="check_modDepthUse">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="4">
+            <widget class="QLineEdit" name="txt_modRateMin">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLabel" name="label_modRate">
+             <property name="text">
+              <string>FM rate (MHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="2">
+            <widget class="ScrollableText" name="txt_modRate">
+             <property name="text">
+              <string>0.015</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="5">
+            <widget class="QLineEdit" name="txt_modRateMax"/>
+           </item>
+           <item row="14" column="3">
+            <widget class="QCheckBox" name="check_modRateLock">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QCheckBox" name="check_modRateUse">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="1">
+            <widget class="QLabel" name="label_phi">
+             <property name="text">
+              <string>phase detuning</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="2">
+            <widget class="ScrollableText" name="txt_phi">
+             <property name="text">
+              <string>0.0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="4">
+            <widget class="QLineEdit" name="txt_phiMin">
+             <property name="text">
+              <string>-180</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="5">
+            <widget class="QLineEdit" name="txt_phiMax">
+             <property name="text">
+              <string>180</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="0">
+            <widget class="QCheckBox" name="check_phiUse">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="3">
+            <widget class="QCheckBox" name="check_phiLock">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="1">
+            <widget class="QLabel" name="label_polynom">
+             <property name="text">
+              <string>polynom baseline</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="0">
+            <widget class="QCheckBox" name="check_polynomUse">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="2">
+            <widget class="QLineEdit" name="txt_polynom">
+             <property name="text">
+              <string>a + b*x + c*x^2 + d*x^3</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="4">
+            <widget class="QLabel" name="label_showDebaselined">
+             <property name="text">
+              <string>show de-baselined data/fit?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="3">
+            <widget class="QCheckBox" name="check_showDebaselined">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QCheckBox" name="check_massUse">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="label_mass">
+             <property name="text">
+              <string>mass (u. amu)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="ScrollableText" name="txt_mass">
+             <property name="text">
+              <string>28</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="layout_conf">
+           <item>
+            <widget class="QPushButton" name="btn_loadConf">
+             <property name="text">
+              <string>Load</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_saveConf">
+             <property name="text">
+              <string>Save</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txt_confFile">
+             <property name="text">
+              <string>~/.prolinefitter.yml</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_plot">
+        <attribute name="title">
+         <string>plot</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="ScaledPlotWidget" name="plotWidget"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_log">
+        <attribute name="title">
+         <string>log</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QTextEdit" name="textEdit"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_table">
+        <attribute name="title">
+         <string>table</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QTableWidget" name="tableWidget"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_2">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="btn_getProfiles">
+          <property name="text">
+           <string>get profiles</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_loadSpec">
+          <property name="text">
+           <string>load spec</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btn_fit">
+          <property name="text">
+           <string>run fit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_fitMulti">
+          <property name="text">
+           <string>run multi-line fit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="btn_fitAll2f">
+          <property name="text">
+           <string>run fit (all 2f)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="btn_clearLabels">
+          <property name="text">
+           <string>clear labels</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="btn_reset">
+          <property name="text">
+           <string>reset plot</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="btn_quit">
+          <property name="text">
+           <string>quit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ScaledPlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>Widgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ScrollableText</class>
+   <extends>QLineEdit</extends>
+   <header>Widgets</header>
+  </customwidget>
+  <customwidget>
+   <class>DetachableTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>Widgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>check_showFitFreqLabels</tabstop>
+  <tabstop>check_calcPairAvgCen</tabstop>
+  <tabstop>combo_fitFunction</tabstop>
+  <tabstop>txt_harmonic</tabstop>
+  <tabstop>btn_getProfiles</tabstop>
+  <tabstop>btn_loadSpec</tabstop>
+  <tabstop>btn_fit</tabstop>
+  <tabstop>btn_fitMulti</tabstop>
+  <tabstop>btn_fitAll2f</tabstop>
+  <tabstop>btn_clearLabels</tabstop>
+  <tabstop>btn_reset</tabstop>
+  <tabstop>btn_quit</tabstop>
+  <tabstop>check_oversampleUse</tabstop>
+  <tabstop>check_windowSizeUse</tabstop>
+  <tabstop>check_freqCenterUse</tabstop>
+  <tabstop>check_tauRadUse</tabstop>
+  <tabstop>check_temperatureUse</tabstop>
+  <tabstop>check_pressureUse</tabstop>
+  <tabstop>check_fwhmUse</tabstop>
+  <tabstop>check_velCollUse</tabstop>
+  <tabstop>check_velDoppUse</tabstop>
+  <tabstop>check_coeffNarUse</tabstop>
+  <tabstop>check_velSDUse</tabstop>
+  <tabstop>check_modDepthUse</tabstop>
+  <tabstop>check_modRateUse</tabstop>
+  <tabstop>check_phiUse</tabstop>
+  <tabstop>check_polynomUse</tabstop>
+  <tabstop>txt_oversample</tabstop>
+  <tabstop>txt_windowSize</tabstop>
+  <tabstop>txt_freqCenter</tabstop>
+  <tabstop>txt_tauRad</tabstop>
+  <tabstop>txt_temperature</tabstop>
+  <tabstop>txt_pressure</tabstop>
+  <tabstop>txt_fwhm</tabstop>
+  <tabstop>txt_velColl</tabstop>
+  <tabstop>txt_velDopp</tabstop>
+  <tabstop>txt_coeffNar</tabstop>
+  <tabstop>txt_velSD</tabstop>
+  <tabstop>txt_modDepth</tabstop>
+  <tabstop>txt_modRate</tabstop>
+  <tabstop>txt_phi</tabstop>
+  <tabstop>txt_polynom</tabstop>
+  <tabstop>check_tauRadLock</tabstop>
+  <tabstop>check_fwhmLock</tabstop>
+  <tabstop>check_velCollLock</tabstop>
+  <tabstop>check_velDoppLock</tabstop>
+  <tabstop>check_coeffNarLock</tabstop>
+  <tabstop>check_velSDLock</tabstop>
+  <tabstop>check_modDepthLock</tabstop>
+  <tabstop>check_modRateLock</tabstop>
+  <tabstop>check_phiLock</tabstop>
+  <tabstop>check_showDebaselined</tabstop>
+  <tabstop>txt_freqCenterMin</tabstop>
+  <tabstop>txt_tauRadMin</tabstop>
+  <tabstop>txt_fwhmMin</tabstop>
+  <tabstop>txt_velCollMin</tabstop>
+  <tabstop>txt_velDoppMin</tabstop>
+  <tabstop>txt_coeffNarMin</tabstop>
+  <tabstop>txt_velSDMin</tabstop>
+  <tabstop>txt_modDepthMin</tabstop>
+  <tabstop>txt_modRateMin</tabstop>
+  <tabstop>txt_phiMin</tabstop>
+  <tabstop>txt_freqCenterMax</tabstop>
+  <tabstop>txt_tauRadMax</tabstop>
+  <tabstop>txt_fwhmMax</tabstop>
+  <tabstop>txt_velCollMax</tabstop>
+  <tabstop>txt_velDoppMax</tabstop>
+  <tabstop>txt_coeffNarMax</tabstop>
+  <tabstop>txt_velSDMax</tabstop>
+  <tabstop>txt_modDepthMax</tabstop>
+  <tabstop>txt_modRateMax</tabstop>
+  <tabstop>txt_phiMax</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>plotWidget</tabstop>
+  <tabstop>textEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

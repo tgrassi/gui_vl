@@ -1,0 +1,2 @@
+# by default, ignores compiled libraries
+*.so export-ignore

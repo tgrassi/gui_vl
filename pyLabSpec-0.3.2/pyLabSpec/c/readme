@@ -1,0 +1,4 @@
+complilation with
+
+gcc -c -fPIC readfile.c -o readfile.o
+gcc -shared -o libreadfile.so readfile.o

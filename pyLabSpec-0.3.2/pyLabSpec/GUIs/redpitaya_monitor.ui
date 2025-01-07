@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="DetachableTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_misc">
+       <attribute name="title">
+        <string>misc</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,0">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,3">
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::ExpandingFieldsGrow</enum>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_rpIP">
+              <property name="text">
+               <string>IP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="txt_rpIP"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_period">
+              <property name="text">
+               <string>period (s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="ScrollableText" name="txt_period">
+              <property name="text">
+               <string>0.1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_frequency">
+              <property name="text">
+               <string>frequency</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="ScrollableText" name="txt_frequency">
+              <property name="text">
+               <string>10</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_amplitude">
+              <property name="text">
+               <string>amplitude</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="ScrollableText" name="txt_amplitude">
+              <property name="text">
+               <string>0.4</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_offset">
+              <property name="text">
+               <string>offset (s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="ScrollableText" name="txt_offset">
+              <property name="text">
+               <string>0.4</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_waveform">
+              <property name="text">
+               <string>waveform</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QComboBox" name="cb_waveform"/>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_delay">
+              <property name="text">
+               <string>delay</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="ScrollableText" name="txt_delay">
+              <property name="text">
+               <string>10</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_threshold">
+              <property name="text">
+               <string>threshold (V)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="ScrollableText" name="txt_threshold">
+              <property name="text">
+               <string>0.1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QComboBox" name="cb_decimation"/>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_decimation">
+              <property name="text">
+               <string>decimation</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="ScrollableText" name="txt_length">
+              <property name="text">
+               <string>500</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_length">
+              <property name="text">
+               <string>length</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QPushButton" name="btn_ledOn">
+                <property name="text">
+                 <string>All LEDs On</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_ledOff">
+                <property name="text">
+                 <string>All LEDs Off</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="LEDWidget" name="led_led" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>15</width>
+                  <height>15</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QPushButton" name="btn_blinkStart">
+                <property name="text">
+                 <string>Blink LED</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_blinkStop">
+                <property name="text">
+                 <string>Stop</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="LEDWidget" name="led_blinker" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>15</width>
+                  <height>15</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QPushButton" name="btn_monAnInStart">
+                <property name="text">
+                 <string>Mon. Analog In Start</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_monAnInStop">
+                <property name="text">
+                 <string>Mon. Analog In Stop</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QPushButton" name="btn_fastoutput1Start">
+                <property name="text">
+                 <string>Fast Out1 Start</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_fastoutput2Start">
+                <property name="text">
+                 <string>Fast Out2 Start</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_fastoutputReset">
+                <property name="text">
+                 <string>Reset Fast Out</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QPushButton" name="btn_mon1start">
+                <property name="text">
+                 <string>Mon. Ch1 Start</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_mon1stop">
+                <property name="text">
+                 <string>Mon. Ch1 Stop</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_mon1clear">
+                <property name="text">
+                 <string>Mon. Ch1 Clear</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="btn_connect">
+            <property name="text">
+             <string>Connect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_reset">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_disconnect">
+            <property name="text">
+             <string>Disconnect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="pb_connection">
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_plot">
+       <attribute name="title">
+        <string>plot</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="ScaledPlotWidget" name="plotWidget"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_text">
+       <attribute name="title">
+        <string>text</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_table">
+       <attribute name="title">
+        <string>table</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tableWidget"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <layout class="QHBoxLayout">
+       <item>
+        <widget class="QPushButton" name="btn_test">
+         <property name="text">
+          <string>run test</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_console">
+         <property name="text">
+          <string>console</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_quit">
+         <property name="text">
+          <string>quit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ScrollableText</class>
+   <extends>QLineEdit</extends>
+   <header>Widgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ScaledPlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>Widgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LEDWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">Widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DetachableTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>Widgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

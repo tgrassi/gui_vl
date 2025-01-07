@@ -1,0 +1,21 @@
+include LICENSE
+
+# C code related to the PCIe-based Digitizer
+include pyLabSpec/c/*
+include pyLabSpec/c/Digitizer/*
+exclude pyLabSpec/c/Digitizer/Digitizer.so
+
+# resources for all the GUIs
+include pyLabSpec/GUIs/*.ui
+include pyLabSpec/GUIs/*.png
+include pyLabSpec/GUIs/*.svg
+include pyLabSpec/GUIs/*.icns
+
+# be sure to exclude proprietary scripts but manually include general ones
+exclude pyLabSpec/Scripts/*.py
+include pyLabSpec/Scripts/archive_the_package.py
+include pyLabSpec/Scripts/pyinstaller_build_prolinefitter.bat
+include pyLabSpec/Scripts/pyinstaller_build_qtfit.bat
+include pyLabSpec/Scripts/pyinstaller_qtfit.spec
+include pyLabSpec/Scripts/pyinstaller_to_nsis.nsi
+include pyLabSpec/Scripts/read_dmm.py

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>459</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Spectral Load Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QFrame" name="frame_options">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QGroupBox" name="group_radio">
+        <property name="title">
+         <string>File Format</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QRadioButton" name="radio_ssv">
+           <property name="text">
+            <string>Space-delimited</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_tsv">
+           <property name="text">
+            <string>TSV</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_csv">
+           <property name="text">
+            <string>CSV</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_casac">
+           <property name="text">
+            <string>CASAC</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_jpl">
+           <property name="text">
+            <string>JPL-style</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_gesp">
+           <property name="text">
+            <string>GESP</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_arbdc">
+           <property name="text">
+            <string>arb. delim./columns</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_arbspacing">
+           <property name="text">
+            <string>arb. spacing</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_fid">
+           <property name="text">
+            <string>FID</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_fits">
+           <property name="text">
+            <string>FITS</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_hidencsv">
+           <property name="text">
+            <string>Hiden CSV</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_brukeropus">
+           <property name="text">
+            <string>Bruker Opus</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radio_batopt3ds">
+           <property name="text">
+            <string>Batop T3DS</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="group_misc">
+        <property name="title">
+         <string>Misc. Options</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QCheckBox" name="check_appendData">
+           <property name="text">
+            <string>Append/concatenate data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="check_hasHeader">
+           <property name="text">
+            <string>Has header as first entry</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_unit">
+             <property name="text">
+              <string>X-axis Unit</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="combo_unit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_scanIndex">
+             <property name="text">
+              <string>Scan Index</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="cb_scanIndex">
+             <property name="minimum">
+              <number>-1</number>
+             </property>
+             <property name="maximum">
+              <number>9999</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_delimeter">
+             <property name="text">
+              <string>Special delimiter</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txt_delimiter"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QSpinBox" name="cb_xCol"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_columns">
+             <property name="text">
+              <string>X col    and    Y col</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="cb_yCol"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="txt_spacingStart"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_spacing">
+             <property name="text">
+              <string>Start  &amp;  Spacing</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="txt_spacingDiff"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_fidStart">
+             <property name="text">
+              <string>FID start (s)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_fftType">
+             <property name="text">
+              <string>FFT type</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_fidStop">
+             <property name="text">
+              <string>FID end (s)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="txt_fidStart"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txt_fidStop"/>
+           </item>
+           <item row="1" column="3">
+            <widget class="QComboBox" name="combo_fftType"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_fidLO">
+             <property name="text">
+              <string>LO (GHz)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="txt_fidLO"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QComboBox" name="combo_fftSideband"/>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="label_fftSideband">
+             <property name="text">
+              <string>Sidebands</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_mass">
+             <property name="text">
+              <string>Mass (amu)</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="cb_mass">
+             <property name="maximum">
+              <number>300</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_preprocesses">
+           <property name="text">
+            <string>Preprocessing (Transformations)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_file">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>50</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="btn_browse">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_file"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_buttons">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>279</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_ok">
+        <property name="text">
+         <string>OK (load)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_cancel">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>radio_ssv</tabstop>
+  <tabstop>radio_tsv</tabstop>
+  <tabstop>radio_csv</tabstop>
+  <tabstop>radio_casac</tabstop>
+  <tabstop>radio_jpl</tabstop>
+  <tabstop>radio_gesp</tabstop>
+  <tabstop>radio_arbdc</tabstop>
+  <tabstop>radio_arbspacing</tabstop>
+  <tabstop>radio_fid</tabstop>
+  <tabstop>check_appendData</tabstop>
+  <tabstop>check_hasHeader</tabstop>
+  <tabstop>combo_unit</tabstop>
+  <tabstop>cb_scanIndex</tabstop>
+  <tabstop>txt_delimiter</tabstop>
+  <tabstop>cb_xCol</tabstop>
+  <tabstop>cb_yCol</tabstop>
+  <tabstop>txt_spacingStart</tabstop>
+  <tabstop>txt_spacingDiff</tabstop>
+  <tabstop>txt_fidStart</tabstop>
+  <tabstop>txt_fidStop</tabstop>
+  <tabstop>txt_fidLO</tabstop>
+  <tabstop>combo_fftType</tabstop>
+  <tabstop>btn_browse</tabstop>
+  <tabstop>txt_file</tabstop>
+  <tabstop>btn_ok</tabstop>
+  <tabstop>btn_cancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
