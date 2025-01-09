@@ -1172,7 +1172,7 @@ def load_file(
     :param ftype: file format (tekscope-csv, ocf (one column format))
     """
     header = []
-    f = open(filename, mode='rU')
+    f = open(filename, mode='r')
 
     log.info("processing file %s" % f)
 
@@ -1257,7 +1257,7 @@ def loadfile_ydata(filename, skipFirst=True):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -1311,7 +1311,7 @@ def loadfile_arbdelim(filename, delimiter=',', skipFirst=True, xcol=1, ycol=2):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -1368,7 +1368,7 @@ def loadfile_jpl(filename, scanindex=0):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -1483,7 +1483,7 @@ def loadfile_gesp(filename):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except:
         err_str = "{}: file not found".format(filename)
         raise NameError(err_str)
@@ -1579,7 +1579,7 @@ def loadfile_fits(filename,
     """ Import a FITS file. """
 
     try:
-        fileHandle = open(filename, mode='rU')
+        fileHandle = open(filename, mode='r')
     except:
         err_str = "{}: file not found".format(filename)
         raise NameError(err_str)
@@ -1717,7 +1717,7 @@ def loadfile_casac(filename):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -1818,7 +1818,7 @@ def loadfile_hidencsv(filename,
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -1937,7 +1937,7 @@ def loadfile_brukeropus(filename, scanindex=0, do_t2a_conversion=False):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='utf-8')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
@@ -2052,7 +2052,7 @@ def loadfile_batopt3ds(filename):
         if sys.version_info[0] == 3:
             fileHandle = open(filename, mode='r', encoding='ISO-8859-1')
         else:
-            fileHandle = open(filename, mode='rU')
+            fileHandle = open(filename, mode='r')
     except IOError:
         err_str = "%s: file could not be loaded" % (filename)
         raise IOError(err_str)
