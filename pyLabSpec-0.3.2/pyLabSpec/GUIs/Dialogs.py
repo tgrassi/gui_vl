@@ -3808,7 +3808,8 @@ class QtProLineFitter(QDialog, Ui_QtProLineFitter):
 		if doNotShiftToZero: # shift the plots & results back if desired
 			# shift spectrum back
 			self.spectrum.x += initX
-			self.plots[0].setData(x=self.spectrum.x)
+			self.plots[0].setData(x=self.spectrum.x, y=self.spectrum.y)
+			#self.plots[0].setData(x=self.spectrum.x)
 			self.plots[0].update()
 			# shift results back
 			results["x"] += initX
